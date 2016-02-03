@@ -3,9 +3,7 @@
 	function accountFilenameForUsername($username) {
 
 		// use the md5 of the username to avoid cases where weird characters in username could create filesystem trouble
-		$result = '/home/hollys11/tmp/data/' . md5($username);
-		print("$result\n");
-		return $result;
+		return '/home/hollys11/tmp/data/' . md5($username);
 	}
 
 	function messageFilenameForUsername($username) {

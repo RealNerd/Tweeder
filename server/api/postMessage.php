@@ -5,9 +5,8 @@
 	$username = $_POST['username'];
 
 	if (addMessageForUser($username, $message)) {
-		// return 204
-		http_response_code(204);
+		header("Status: 204 No Data");
 	} else {
-		http_response_code(500);
+		header("Status: 500 Server Error");
 	}
 ?>

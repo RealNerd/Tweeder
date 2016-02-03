@@ -9,7 +9,7 @@
 	if ($messages !== FALSE) {
 		$outputMessages = array();
 		foreach ($messages as $message) {
-			if ($message['ts'] > $lastRequestDate) {
+			if ($message->ts > $lastRequestDate) {
 				$outputMessages[] = $message;
 			}
 		}

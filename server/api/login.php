@@ -5,8 +5,8 @@
 	$username = $_POST['username'];
 
 	if (validateAccount($username, $password)) {
-		http_response_code(204);
+		header("Status: 204 No Data");
 	} else {
-		http_response_code(409);
+		header("Status: 404 Not Found");
 	}
 ?>

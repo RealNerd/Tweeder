@@ -25,7 +25,7 @@
 		}
 
 		$accountData = array('password' => $password, 'ts' => time());
-		file_put_contents($accountFilenameForUsername($username), json_encode(($accountData)));
+		file_put_contents(accountFilenameForUsername($username), json_encode(($accountData)));
 
 		return TRUE;
 	}

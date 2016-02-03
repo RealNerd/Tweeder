@@ -64,6 +64,6 @@
 		$currentMessages = loadAllMessagesForUsername($username);
 		$newMessageObject = array('message' => $message, 'ts' => time());
 		array_unshift($currentMessages, $newMessageObject); // php has an odd way of prepending to an array
-		return file_put_contents(messageFilenameForUsername($username), $currentMessages);
+		return file_put_contents(messageFilenameForUsername($username), json_encode($currentMessages));
 	}
 ?>

@@ -13,8 +13,19 @@
 		256525A81C62968C001D762B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256525A61C62968C001D762B /* Main.storyboard */; };
 		256525AA1C62968C001D762B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 256525A91C62968C001D762B /* Assets.xcassets */; };
 		256525AD1C62968C001D762B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256525AB1C62968C001D762B /* LaunchScreen.storyboard */; };
-		256525B81C62968C001D762B /* tweederTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256525B71C62968C001D762B /* tweederTests.m */; };
 		256525C31C62968C001D762B /* tweederUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256525C21C62968C001D762B /* tweederUITests.m */; };
+		256525D31C6298DA001D762B /* TWApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 256525D21C6298DA001D762B /* TWApiManager.m */; };
+		256525D41C6298DA001D762B /* TWApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 256525D21C6298DA001D762B /* TWApiManager.m */; };
+		256525D61C629F17001D762B /* apiManagerUnitAndIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256525D51C629F17001D762B /* apiManagerUnitAndIntegrationTests.m */; };
+		25FD8F2A1C62ADC70056F6E4 /* TWUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F291C62ADC70056F6E4 /* TWUserManager.m */; };
+		25FD8F2B1C62ADC70056F6E4 /* TWUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F291C62ADC70056F6E4 /* TWUserManager.m */; };
+		25FD8F2F1C62B1990056F6E4 /* TWGeneralUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F2E1C62B1990056F6E4 /* TWGeneralUtilities.m */; };
+		25FD8F301C62B1990056F6E4 /* TWGeneralUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F2E1C62B1990056F6E4 /* TWGeneralUtilities.m */; };
+		25FD8F331C62B6A00056F6E4 /* NSString+TweederUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F321C62B6A00056F6E4 /* NSString+TweederUtilities.m */; };
+		25FD8F341C62B6A00056F6E4 /* NSString+TweederUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F321C62B6A00056F6E4 /* NSString+TweederUtilities.m */; };
+		25FD8F361C62BD3B0056F6E4 /* userManagerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F351C62BD3B0056F6E4 /* userManagerTestCase.m */; };
+		D70519FE89D8791D8CB6FDB5 /* libPods-tweeder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98475CE05FA42447A1FA898C /* libPods-tweeder.a */; };
+		FAB869A3E282CFF6384D45CF /* libPods-tweederTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0014AB4DB8DBA4629BD95B5B /* libPods-tweederTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0014AB4DB8DBA4629BD95B5B /* libPods-tweederTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tweederTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01C1473F261D8FBFA8A19D9A /* Pods-tweeder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweeder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tweeder/Pods-tweeder.debug.xcconfig"; sourceTree = "<group>"; };
 		2565259A1C62968C001D762B /* tweeder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tweeder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2565259E1C62968C001D762B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		256525A01C62968C001D762B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,11 +59,24 @@
 		256525AC1C62968C001D762B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		256525AE1C62968C001D762B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		256525B31C62968C001D762B /* tweederTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tweederTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		256525B71C62968C001D762B /* tweederTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tweederTests.m; sourceTree = "<group>"; };
 		256525B91C62968C001D762B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		256525BE1C62968C001D762B /* tweederUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tweederUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		256525C21C62968C001D762B /* tweederUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tweederUITests.m; sourceTree = "<group>"; };
 		256525C41C62968C001D762B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		256525D11C6298DA001D762B /* TWApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWApiManager.h; sourceTree = "<group>"; };
+		256525D21C6298DA001D762B /* TWApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWApiManager.m; sourceTree = "<group>"; };
+		256525D51C629F17001D762B /* apiManagerUnitAndIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = apiManagerUnitAndIntegrationTests.m; sourceTree = "<group>"; };
+		25FD8F281C62ADC70056F6E4 /* TWUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWUserManager.h; sourceTree = "<group>"; };
+		25FD8F291C62ADC70056F6E4 /* TWUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWUserManager.m; sourceTree = "<group>"; };
+		25FD8F2D1C62B1990056F6E4 /* TWGeneralUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWGeneralUtilities.h; sourceTree = "<group>"; };
+		25FD8F2E1C62B1990056F6E4 /* TWGeneralUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWGeneralUtilities.m; sourceTree = "<group>"; };
+		25FD8F311C62B6A00056F6E4 /* NSString+TweederUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TweederUtilities.h"; sourceTree = "<group>"; };
+		25FD8F321C62B6A00056F6E4 /* NSString+TweederUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TweederUtilities.m"; sourceTree = "<group>"; };
+		25FD8F351C62BD3B0056F6E4 /* userManagerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userManagerTestCase.m; sourceTree = "<group>"; };
+		2F461415D82C0678A90CC09A /* Pods-tweeder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweeder.release.xcconfig"; path = "Pods/Target Support Files/Pods-tweeder/Pods-tweeder.release.xcconfig"; sourceTree = "<group>"; };
+		98475CE05FA42447A1FA898C /* libPods-tweeder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tweeder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA8227423D05A86D1D99C2CF /* Pods-tweederTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweederTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tweederTests/Pods-tweederTests.release.xcconfig"; sourceTree = "<group>"; };
+		E5F7ABF37DAC855AB092B57C /* Pods-tweederTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweederTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tweederTests/Pods-tweederTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70519FE89D8791D8CB6FDB5 /* libPods-tweeder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB869A3E282CFF6384D45CF /* libPods-tweederTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +113,8 @@
 				256525B61C62968C001D762B /* tweederTests */,
 				256525C11C62968C001D762B /* tweederUITests */,
 				2565259B1C62968C001D762B /* Products */,
+				E2B2BBFD829E4FE07E56D9CD /* Pods */,
+				62217C3AC64EA5447BCC6812 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +131,8 @@
 		2565259C1C62968C001D762B /* tweeder */ = {
 			isa = PBXGroup;
 			children = (
+				25FD8F2C1C62B1740056F6E4 /* utilities */,
+				256525D01C6298B0001D762B /* managers */,
 				256525A01C62968C001D762B /* AppDelegate.h */,
 				256525A11C62968C001D762B /* AppDelegate.m */,
 				256525A31C62968C001D762B /* ViewController.h */,
@@ -125,8 +157,9 @@
 		256525B61C62968C001D762B /* tweederTests */ = {
 			isa = PBXGroup;
 			children = (
-				256525B71C62968C001D762B /* tweederTests.m */,
 				256525B91C62968C001D762B /* Info.plist */,
+				256525D51C629F17001D762B /* apiManagerUnitAndIntegrationTests.m */,
+				25FD8F351C62BD3B0056F6E4 /* userManagerTestCase.m */,
 			);
 			path = tweederTests;
 			sourceTree = "<group>";
@@ -140,6 +173,48 @@
 			path = tweederUITests;
 			sourceTree = "<group>";
 		};
+		256525D01C6298B0001D762B /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				256525D11C6298DA001D762B /* TWApiManager.h */,
+				256525D21C6298DA001D762B /* TWApiManager.m */,
+				25FD8F281C62ADC70056F6E4 /* TWUserManager.h */,
+				25FD8F291C62ADC70056F6E4 /* TWUserManager.m */,
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		25FD8F2C1C62B1740056F6E4 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				25FD8F2D1C62B1990056F6E4 /* TWGeneralUtilities.h */,
+				25FD8F2E1C62B1990056F6E4 /* TWGeneralUtilities.m */,
+				25FD8F311C62B6A00056F6E4 /* NSString+TweederUtilities.h */,
+				25FD8F321C62B6A00056F6E4 /* NSString+TweederUtilities.m */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		62217C3AC64EA5447BCC6812 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98475CE05FA42447A1FA898C /* libPods-tweeder.a */,
+				0014AB4DB8DBA4629BD95B5B /* libPods-tweederTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2B2BBFD829E4FE07E56D9CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01C1473F261D8FBFA8A19D9A /* Pods-tweeder.debug.xcconfig */,
+				2F461415D82C0678A90CC09A /* Pods-tweeder.release.xcconfig */,
+				E5F7ABF37DAC855AB092B57C /* Pods-tweederTests.debug.xcconfig */,
+				BA8227423D05A86D1D99C2CF /* Pods-tweederTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 256525C71C62968C001D762B /* Build configuration list for PBXNativeTarget "tweeder" */;
 			buildPhases = (
+				CCB41E916942819FEFDA37A2 /* Check Pods Manifest.lock */,
 				256525961C62968C001D762B /* Sources */,
 				256525971C62968C001D762B /* Frameworks */,
 				256525981C62968C001D762B /* Resources */,
+				291737D3CA05BE6667F54899 /* Embed Pods Frameworks */,
+				A3C338AC59451292121463ED /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 256525CA1C62968C001D762B /* Build configuration list for PBXNativeTarget "tweederTests" */;
 			buildPhases = (
+				0EBF38956B756C3AB0BC75EC /* Check Pods Manifest.lock */,
 				256525AF1C62968C001D762B /* Sources */,
 				256525B01C62968C001D762B /* Frameworks */,
 				256525B11C62968C001D762B /* Resources */,
+				0DF98C7A2FCAB251C481B750 /* Embed Pods Frameworks */,
+				99E7E3290FBCAE3E8BB8A32E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,14 +346,111 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DF98C7A2FCAB251C481B750 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tweederTests/Pods-tweederTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0EBF38956B756C3AB0BC75EC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		291737D3CA05BE6667F54899 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tweeder/Pods-tweeder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99E7E3290FBCAE3E8BB8A32E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tweederTests/Pods-tweederTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3C338AC59451292121463ED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tweeder/Pods-tweeder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCB41E916942819FEFDA37A2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		256525961C62968C001D762B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				256525A51C62968C001D762B /* ViewController.m in Sources */,
+				256525D31C6298DA001D762B /* TWApiManager.m in Sources */,
+				25FD8F2F1C62B1990056F6E4 /* TWGeneralUtilities.m in Sources */,
 				256525A21C62968C001D762B /* AppDelegate.m in Sources */,
+				25FD8F2A1C62ADC70056F6E4 /* TWUserManager.m in Sources */,
 				2565259F1C62968C001D762B /* main.m in Sources */,
+				25FD8F331C62B6A00056F6E4 /* NSString+TweederUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +458,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				256525B81C62968C001D762B /* tweederTests.m in Sources */,
+				25FD8F301C62B1990056F6E4 /* TWGeneralUtilities.m in Sources */,
+				256525D41C6298DA001D762B /* TWApiManager.m in Sources */,
+				25FD8F361C62BD3B0056F6E4 /* userManagerTestCase.m in Sources */,
+				25FD8F341C62B6A00056F6E4 /* NSString+TweederUtilities.m in Sources */,
+				25FD8F2B1C62ADC70056F6E4 /* TWUserManager.m in Sources */,
+				256525D61C629F17001D762B /* apiManagerUnitAndIntegrationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +594,7 @@
 		};
 		256525C81C62968C001D762B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01C1473F261D8FBFA8A19D9A /* Pods-tweeder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tweeder/Info.plist;
@@ -422,6 +606,7 @@
 		};
 		256525C91C62968C001D762B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F461415D82C0678A90CC09A /* Pods-tweeder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tweeder/Info.plist;
@@ -433,6 +618,7 @@
 		};
 		256525CB1C62968C001D762B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F7ABF37DAC855AB092B57C /* Pods-tweederTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = tweederTests/Info.plist;
@@ -445,6 +631,7 @@
 		};
 		256525CC1C62968C001D762B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA8227423D05A86D1D99C2CF /* Pods-tweederTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = tweederTests/Info.plist;
@@ -498,6 +685,7 @@
 				256525C91C62968C001D762B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		256525CA1C62968C001D762B /* Build configuration list for PBXNativeTarget "tweederTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +694,7 @@
 				256525CC1C62968C001D762B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		256525CD1C62968C001D762B /* Build configuration list for PBXNativeTarget "tweederUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +703,7 @@
 				256525CF1C62968C001D762B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,7 +17,7 @@
 		header('Content-Type: application/json');
 		print(json_encode($outputMessages));
 	} else {
-		http_response_code(404);
+		header("Status: 404 Not Found");
 	}
 
 ?>

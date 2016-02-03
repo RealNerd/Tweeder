@@ -3,12 +3,12 @@
 	function accountFilenameForUsername($username) {
 
 		// use the md5 of the username to avoid cases where weird characters in username could create filesystem trouble
-		return '~/tmp/data/' . md5($username);
+		return sys_get_temp_dir() . '/data/' . md5($username);
 	}
 
 	function messageFilenameForUsername($username) {
 
-		return '~/tmp/data/' . md5($username) . '.messages';
+		return sys_get_temp_dir() . '/data/' . md5($username) . '.messages';
 	}
 
 	function accountExists($username) {

@@ -35,7 +35,7 @@
 		if (accountExists($username)) {
 			$data = file_get_contents(accountFilenameForUsername($username));
 			$accountData = json_decode($data);
-			if ($accountData['password'] == $password) {
+			if ($accountData->password == $password) {
 				return TRUE;
 			}
 		}

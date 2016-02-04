@@ -17,6 +17,8 @@ Perhaps a little overkill, but to demonstrate the feature of only requesting new
 
 I made some very simplified technical design decisions while building this sample app. First off, most of the unit tests are very simplistic and test the *happy path* in most cases. The API layer doesn't make a great effort to notify the user of truly exceptional failures such as network timeouts and has absolutely no handling of offline mode.
 
+The majority of my work is focused on the functional aspects of the app. I didn't spend a lot of time thinking about the cell layout in the main tableview, nor did I try to develop an overal layout theme. I did try to make it look at least presentable, though, while focusing primarily on the core functionality.
+
 After successful login, the username is passed back to the server on most requests (instead of using some sort of session token) for simplicity. In a real app, I would expect the login service to return a token to be used in the headers (or bodies) of the subsequent API requests. The server would then be able to expire the session token for security.
 
 Local data is stored in NSUserDefaults or flat files (JSON). My primary experience with local databases on iOS is with SQLite, but that felt like overkill for this project.

@@ -11,9 +11,14 @@
 #import "TWApiManager.h"
 #import "NSString+TweederUtilities.h"
 
+// User displayed strings
 #define kUserManagerErrorMissingUsername NSLocalizedString(@"Username cannot be empty.", @"")
 #define kUserManagerErrorMissingPassword NSLocalizedString(@"Password cannot be empty.", @"")
 #define kUserManagerErrorNoCurrentUser   NSLocalizedString(@"You must log in.", @"")
+
+// Internal constants including strings not visible to the user
+NSString * const kSettingUsername                         = @"com.vikingricks.tweeder.username";
+NSString * const kSettingLastMessageRequestedDateTemplate = @"com.vikingricks.tweeder.lastMessageRequestedDateForUser.%@";
 
 @implementation TWUserManager
 
@@ -155,6 +160,13 @@
     }];
 }
 
+- (void)setLastMessageRequestDateForCurrentUser:(NSString *)lastMessageRequestDate {
+    
+    NSString *key = [NSString stringWithFormat:kSettingLastMessageRequestedDateTemplate, self.loggedInUsername ?: @"none"];
+    [[NSUserDefaults standardUserDefaults] setObject:lastMessageRequestDate forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void)logout {
     
     [self clearCurrentUser];
@@ -176,18 +188,28 @@
 #pragma mark - Internal/Private methods
 - (void)attemptAutoLogin {
     
-    // TODO: load last logged-in username from settings
+    // load last logged-in username from settings
+    NSString *lastLoggedInUsername = [[NSUserDefaults standardUserDefaults] stringForKey:kSettingUsername];
+    if (lastLoggedInUsername) {
+        [self setCurrentUserWithUsername:lastLoggedInUsername];
+    }
 }
 
 - (NSString *)getLastMessageRequestDateForCurrentUser {
-    
-    return @"0";
+
+    // error handling here is overly simplistic, but avoids crashes by at least returning somewhat sane values
+    NSString *key = [NSString stringWithFormat:kSettingLastMessageRequestedDateTemplate, self.loggedInUsername ?: @"none"];
+    NSString *lastMessageRequestedDateForCurrentUser = [[NSUserDefaults standardUserDefaults] stringForKey:key];
+    return lastMessageRequestedDateForCurrentUser ?: @"0";
 }
 
 - (void)clearCurrentUser {
     
     _isLoggedIn = NO;
     _loggedInUsername = nil;
+    
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kSettingUsername];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)setCurrentUserWithUsername:(NSString *)username {
@@ -195,7 +217,9 @@
     _isLoggedIn = YES;
     _loggedInUsername = username;
     
-    // TODO: save for autologin
+    // save for autologin
+    [[NSUserDefaults standardUserDefaults] setObject:username forKey:kSettingUsername];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Singleton Methods

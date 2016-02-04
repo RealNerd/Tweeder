@@ -27,6 +27,8 @@
 - (void)postNewMessageForCurrentUser:(NSString *)newMessage
                                block:(void (^)(BOOL success, NSError *error))block;
 
+- (void)setLastMessageRequestDateForCurrentUser:(NSString *)lastMessageRequestDate;
+
 - (void)logout;
 
 @end

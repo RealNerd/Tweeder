@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginSignupViewController.h"
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, LoginSignupVCDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tweederTable;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *loginLogoutButton;
 
 @end
 

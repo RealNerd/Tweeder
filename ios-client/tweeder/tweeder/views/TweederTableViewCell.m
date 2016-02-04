@@ -7,6 +7,8 @@
 //
 
 #import "TweederTableViewCell.h"
+#import "TWUserManager.h"
+#import "TWGeneralUtilities.h"
 
 @implementation TweederTableViewCell
 
@@ -22,9 +24,13 @@
 
 - (void)configureWithData:(NSDictionary *)data {
     
-    self.usernameLabel.text = @"blake";
-    self.dateLabel.text = @"5/12/15 12:22:31";
-    self.messageLabel.text = @"Congratulations to Daisy Ridley on her nomination for Favorite Actress! Vote by tweeting #VoteDaisyRidley & #KCA";
+    self.usernameLabel.text = [NSString stringWithFormat:@"@%@", [TWUserManager shared].loggedInUsername];
+    self.messageLabel.text = [data valueForKey:@"message"];
+    
+    NSNumber *timeStamp = [data valueForKey:@"ts"];
+    NSDate   *date = [NSDate dateWithTimeIntervalSince1970:[timeStamp longLongValue]];
+    NSDateFormatter *displayFormatter = [TWGeneralUtilities displayDateFormatter];
+    self.dateLabel.text = [displayFormatter stringFromDate:date];
 }
 
 @end

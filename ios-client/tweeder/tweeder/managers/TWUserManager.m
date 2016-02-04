@@ -20,6 +20,10 @@
 NSString * const kSettingUsername                         = @"com.vikingricks.tweeder.username";
 NSString * const kSettingLastMessageRequestedDateTemplate = @"com.vikingricks.tweeder.lastMessageRequestedDateForUser.%@";
 
+@interface TWUserManager()
+@property (strong, nonatomic) NSMutableArray *localMessages;
+@end
+
 @implementation TWUserManager
 
 #pragma mark - Public methods
@@ -105,12 +109,12 @@ NSString * const kSettingLastMessageRequestedDateTemplate = @"com.vikingricks.tw
     }];
 }
 
-- (void)fetchNewMessagesForCurrentUserWithBlock:(void (^)(NSArray *newMessages, NSError *error))block {
+- (void)fetchNewMessagesForCurrentUserWithBlock:(void (^)(BOOL success, NSError *error))block {
     
     // Make sure there is a current user.
     if (!self.loggedInUsername) {
         if (block) {
-            block(nil, [TWGeneralUtilities createAppErrorWithMessage:kUserManagerErrorNoCurrentUser]);
+            block(NO, [TWGeneralUtilities createAppErrorWithMessage:kUserManagerErrorNoCurrentUser]);
             return;
         }
     }
@@ -119,10 +123,13 @@ NSString * const kSettingLastMessageRequestedDateTemplate = @"com.vikingricks.tw
     NSString *lastRequestDate = [self getLastMessageRequestDateForCurrentUser];
     
     // Attempt to fetch messages
+    __weak typeof(self) weakSelf = self;
     [[TWApiManager shared] apiRequest:@"getMessages" withMethod:@"GET" andParameters:@{@"username": self.loggedInUsername, @"lastRequestDate": lastRequestDate} success:^(id responseObject) {
+        
+        [weakSelf mergeNewMessages:responseObject];
         if (block) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                block(responseObject, nil);
+                block(YES, nil);
             });
         }
     } failure:^(NSUInteger httpResponseCode, NSError *error) {
@@ -172,6 +179,11 @@ NSString * const kSettingLastMessageRequestedDateTemplate = @"com.vikingricks.tw
     [self clearCurrentUser];
 }
 
+- (NSArray *)messages {
+    
+    return [NSArray arrayWithArray:self.localMessages];
+}
+
 #pragma mark - initialization methods
 - (id)init {
     
@@ -210,6 +222,8 @@ NSString * const kSettingLastMessageRequestedDateTemplate = @"com.vikingricks.tw
     
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kSettingUsername];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    self.localMessages = nil;
 }
 
 - (void)setCurrentUserWithUsername:(NSString *)username {
@@ -220,6 +234,51 @@ NSString * const kSettingLastMessageRequestedDateTemplate = @"com.vikingricks.tw
     // save for autologin
     [[NSUserDefaults standardUserDefaults] setObject:username forKey:kSettingUsername];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self loadLocalMessages];
+}
+
+- (void)loadLocalMessages {
+    
+    if (!self.localMessages) {
+        self.localMessages = [[NSMutableArray alloc] init];
+    } else {
+        [self.localMessages removeAllObjects];
+    }
+    
+    NSString *localMessagesFile = [TWGeneralUtilities localMessagesFilePathForUsername:self.loggedInUsername];
+    NSData *json = [NSData dataWithContentsOfFile:localMessagesFile];
+    if (json) {
+        NSError *error = nil;
+        NSArray *temp = [NSJSONSerialization JSONObjectWithData:json options:kNilOptions error:&error];
+        [temp enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [self.localMessages addObject:obj];
+        }];
+    }
+}
+
+- (void)saveLocalMessages {
+    
+    NSString *localMessagesFile = [TWGeneralUtilities localMessagesFilePathForUsername:self.loggedInUsername];
+    NSError *error = nil;
+    NSData *json = [NSJSONSerialization dataWithJSONObject:self.localMessages options:kNilOptions error:&error];
+    if (!error) {
+        [json writeToFile:localMessagesFile atomically:YES];
+    }
+}
+
+- (void)mergeNewMessages:(NSArray *)newMessages {
+    
+    // looping backwards, add each new object onto the local objects array at the head of the array
+    [[[newMessages reverseObjectEnumerator] allObjects] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.localMessages insertObject:obj atIndex:0];
+    }];
+    
+    NSDictionary *message = [self.localMessages firstObject]; // this is the newest message
+    NSString *newestMessageTimestamp = [message valueForKey:@"ts"];
+    [self setLastMessageRequestDateForCurrentUser:newestMessageTimestamp];
+    
+    [self saveLocalMessages];
 }
 
 #pragma mark - Singleton Methods

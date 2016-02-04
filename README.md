@@ -21,9 +21,33 @@ After successful login, the username is passed back to the server on most reques
 
 Local data is stored in NSUserDefaults or flat files (JSON). My primary experience with local databases on iOS is with SQLite, but that felt like overkill for this project.
 
+This project uses two libraries that I've used in the past:
+- AFNetworking
+- IQKeyboardManager
+
+Both are included as Podfiles, so to build, you must first `pod install`. I did not include all of the Pod/* files in the repo, just the *Podfile* itself. I am using *pod* version 0.39.0.
+
+AFNetworking provides the core networking functionality for the API calls I make. It handles JSON deserialization from the server. I used very basic AFNetworking in this project, but have developed many projects with many more advanced features.
+
+IQKeyboardManager helps manage scrolling when the keyboard appears. I use this frequently to minimize the boilerplate code required for to ensure that input fields aren't hidden under the keyboard.
+
+I built the app to work in all standard orientations on both iPhone and iPad.
+
+Pull to refresh is enabled on the tableview. Try running the app on two devices with the same account, then post from one device and pull to refresh on the other. Fun!
+
+### Testing
+
+I have included some unit/integration tests for this project that test the basics of the API. This is the area in which I have the most experience writing tests. I did not include any UI tests as I have not used Xcode 7's UI testing, yet.
+
 ### Server side
 
 I made no effort on the server side to secure anything. I also did very, very little in terms of exception handling. I tried to build the most basic REST service using PHP that met the minimum needs of this sample project and demonstrate some generally-accepted REST principles. All responses are either a simple HTTP status code or a JSON response object.
+
+I have deployed the API code to a public server, so there is no need to actually set up a new API server to test this project.
+
+### Other notes
+
+I do not have permission to use the image for the icon.
 
 
 

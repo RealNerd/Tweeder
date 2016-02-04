@@ -28,6 +28,7 @@
 		25FD8F3B1C62D0770056F6E4 /* TweederTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F391C62D0770056F6E4 /* TweederTableViewCell.m */; };
 		25FD8F3F1C62E3070056F6E4 /* LoginSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F3E1C62E3070056F6E4 /* LoginSignupViewController.m */; };
 		25FD8F401C62E3070056F6E4 /* LoginSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F3E1C62E3070056F6E4 /* LoginSignupViewController.m */; };
+		25FD8F441C62FF9A0056F6E4 /* NewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FD8F431C62FF9A0056F6E4 /* NewMessageViewController.m */; };
 		D70519FE89D8791D8CB6FDB5 /* libPods-tweeder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98475CE05FA42447A1FA898C /* libPods-tweeder.a */; };
 		FAB869A3E282CFF6384D45CF /* libPods-tweederTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0014AB4DB8DBA4629BD95B5B /* libPods-tweederTests.a */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,8 @@
 		25FD8F391C62D0770056F6E4 /* TweederTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweederTableViewCell.m; sourceTree = "<group>"; };
 		25FD8F3D1C62E3070056F6E4 /* LoginSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSignupViewController.h; sourceTree = "<group>"; };
 		25FD8F3E1C62E3070056F6E4 /* LoginSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginSignupViewController.m; sourceTree = "<group>"; };
+		25FD8F421C62FF9A0056F6E4 /* NewMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMessageViewController.h; sourceTree = "<group>"; };
+		25FD8F431C62FF9A0056F6E4 /* NewMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMessageViewController.m; sourceTree = "<group>"; };
 		2F461415D82C0678A90CC09A /* Pods-tweeder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweeder.release.xcconfig"; path = "Pods/Target Support Files/Pods-tweeder/Pods-tweeder.release.xcconfig"; sourceTree = "<group>"; };
 		98475CE05FA42447A1FA898C /* libPods-tweeder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tweeder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8227423D05A86D1D99C2CF /* Pods-tweederTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweederTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tweederTests/Pods-tweederTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 		2565259C1C62968C001D762B /* tweeder */ = {
 			isa = PBXGroup;
 			children = (
+				25FD8F411C62FC740056F6E4 /* models */,
 				25FD8F3C1C62E2EA0056F6E4 /* controllers */,
 				25FD8F371C62D0560056F6E4 /* views */,
 				25FD8F2C1C62B1740056F6E4 /* utilities */,
@@ -219,8 +223,17 @@
 				256525A41C62968C001D762B /* ViewController.m */,
 				25FD8F3D1C62E3070056F6E4 /* LoginSignupViewController.h */,
 				25FD8F3E1C62E3070056F6E4 /* LoginSignupViewController.m */,
+				25FD8F421C62FF9A0056F6E4 /* NewMessageViewController.h */,
+				25FD8F431C62FF9A0056F6E4 /* NewMessageViewController.m */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		25FD8F411C62FC740056F6E4 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		62217C3AC64EA5447BCC6812 /* Frameworks */ = {
@@ -473,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				256525A51C62968C001D762B /* ViewController.m in Sources */,
+				25FD8F441C62FF9A0056F6E4 /* NewMessageViewController.m in Sources */,
 				256525D31C6298DA001D762B /* TWApiManager.m in Sources */,
 				25FD8F2F1C62B1990056F6E4 /* TWGeneralUtilities.m in Sources */,
 				25FD8F3F1C62E3070056F6E4 /* LoginSignupViewController.m in Sources */,

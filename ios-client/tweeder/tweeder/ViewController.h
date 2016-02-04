@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginSignupViewController.h"
+#import "NewMessageViewController.h"
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, LoginSignupVCDelegate>
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, LoginSignupVCDelegate, NewMessageVCDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tweederTable;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *loginLogoutButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addMessageButton;
+@property (weak, nonatomic) IBOutlet UILabel *noMessagesLabel;
 
 @end
 

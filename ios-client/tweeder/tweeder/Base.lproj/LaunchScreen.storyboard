@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,13 +16,52 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="0cs-eI-MgM">
+                                <rect key="frame" x="215" y="215" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="IkV-UJ-BxA"/>
+                                    <constraint firstAttribute="width" constant="170" id="NuR-Ya-c41"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tweeder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCq-9j-dPT">
+                                <rect key="frame" x="232" y="145" width="137" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="5bF-E8-XHe"/>
+                                    <constraint firstAttribute="width" constant="137" id="Bel-pc-N1D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright 2016 by Viking Ricks, LLC. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQX-kC-CPh">
+                                <rect key="frame" x="86" y="559" width="429" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="429" id="4KH-bt-DcS"/>
+                                    <constraint firstAttribute="height" constant="21" id="nnK-mE-jp8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="SQX-kC-CPh" secondAttribute="bottom" constant="20" id="DzI-Ij-Qqe"/>
+                            <constraint firstItem="aCq-9j-dPT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LVs-Sv-Jxi"/>
+                            <constraint firstItem="0cs-eI-MgM" firstAttribute="top" secondItem="aCq-9j-dPT" secondAttribute="bottom" constant="8" id="Obj-vH-NLr"/>
+                            <constraint firstItem="0cs-eI-MgM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Z5C-cI-Ii8"/>
+                            <constraint firstItem="0cs-eI-MgM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="b4k-t9-EJC"/>
+                            <constraint firstItem="SQX-kC-CPh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fAO-BD-xAZ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="186" y="359"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="170" height="170"/>
+    </resources>
 </document>

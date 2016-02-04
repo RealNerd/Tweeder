@@ -11,6 +11,7 @@
 @interface TWUserManager : NSObject
 @property (readonly) NSString *loggedInUsername;
 @property (readonly) BOOL      isLoggedIn;
+@property (readonly) NSArray  *messages;
 
 + (TWUserManager *)shared;
 
@@ -22,7 +23,7 @@
                   password:(NSString *)password
                      block:(void (^)(BOOL success, NSError *error))block;
 
-- (void)fetchNewMessagesForCurrentUserWithBlock:(void (^)(NSArray *newMessages, NSError *error))block;
+- (void)fetchNewMessagesForCurrentUserWithBlock:(void (^)(BOOL success, NSError *error))block;
 
 - (void)postNewMessageForCurrentUser:(NSString *)newMessage
                                block:(void (^)(BOOL success, NSError *error))block;

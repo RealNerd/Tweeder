@@ -13,4 +13,8 @@
 + (NSError *)createAppErrorWithMessage:(NSString *)errorMessage;
 + (BOOL)isValidApiStringParameter:(NSString *)parameter;
 
++ (NSString *)localMessagesFilePathForUsername:(NSString *)username;
+
++ (NSDateFormatter *)displayDateFormatter;
+
 @end

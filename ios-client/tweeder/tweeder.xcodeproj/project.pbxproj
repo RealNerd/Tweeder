@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250CFEB41C6BF4A000BBA768 /* NSURLRequest+cURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 250CFEB31C6BF4A000BBA768 /* NSURLRequest+cURL.m */; };
+		250CFEB51C6BF4A000BBA768 /* NSURLRequest+cURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 250CFEB31C6BF4A000BBA768 /* NSURLRequest+cURL.m */; };
 		2565259F1C62968C001D762B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2565259E1C62968C001D762B /* main.m */; };
 		256525A21C62968C001D762B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256525A11C62968C001D762B /* AppDelegate.m */; };
 		256525A51C62968C001D762B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256525A41C62968C001D762B /* ViewController.m */; };
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		0014AB4DB8DBA4629BD95B5B /* libPods-tweederTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tweederTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C1473F261D8FBFA8A19D9A /* Pods-tweeder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweeder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tweeder/Pods-tweeder.debug.xcconfig"; sourceTree = "<group>"; };
+		250CFEB21C6BF4A000BBA768 /* NSURLRequest+cURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+cURL.h"; sourceTree = "<group>"; };
+		250CFEB31C6BF4A000BBA768 /* NSURLRequest+cURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+cURL.m"; sourceTree = "<group>"; };
 		2565259A1C62968C001D762B /* tweeder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tweeder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2565259E1C62968C001D762B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		256525A01C62968C001D762B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 				25FD8F2E1C62B1990056F6E4 /* TWGeneralUtilities.m */,
 				25FD8F311C62B6A00056F6E4 /* NSString+TweederUtilities.h */,
 				25FD8F321C62B6A00056F6E4 /* NSString+TweederUtilities.m */,
+				250CFEB21C6BF4A000BBA768 /* NSURLRequest+cURL.h */,
+				250CFEB31C6BF4A000BBA768 /* NSURLRequest+cURL.m */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 				25FD8F2A1C62ADC70056F6E4 /* TWUserManager.m in Sources */,
 				2565259F1C62968C001D762B /* main.m in Sources */,
 				25FD8F331C62B6A00056F6E4 /* NSString+TweederUtilities.m in Sources */,
+				250CFEB41C6BF4A000BBA768 /* NSURLRequest+cURL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +515,7 @@
 				25FD8F361C62BD3B0056F6E4 /* userManagerTestCase.m in Sources */,
 				25FD8F401C62E3070056F6E4 /* LoginSignupViewController.m in Sources */,
 				25FD8F341C62B6A00056F6E4 /* NSString+TweederUtilities.m in Sources */,
+				250CFEB51C6BF4A000BBA768 /* NSURLRequest+cURL.m in Sources */,
 				25FD8F2B1C62ADC70056F6E4 /* TWUserManager.m in Sources */,
 				256525D61C629F17001D762B /* apiManagerUnitAndIntegrationTests.m in Sources */,
 			);

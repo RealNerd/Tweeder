@@ -7,6 +7,7 @@
 //
 
 #import "TWApiManager.h"
+#import "NSURLRequest+cURL.h"
 
 NSString * const kBaseURL = @"http://hollyscorner.com/tweeder/api";
 
@@ -24,8 +25,10 @@ NSString * const kBaseURL = @"http://hollyscorner.com/tweeder/api";
                               failure:(void (^)(NSUInteger httpResponseCode, NSError *error)) failureBlock {
 
     NSError *error = nil;
-    NSString *fullUrl = [[kBaseURL stringByAppendingPathComponent:endpoint] stringByAppendingPathExtension:@"php"];
+    NSString *fullUrl = [[@"http://hollyscorner.com/tweeder/api/" stringByAppendingString:endpoint] stringByAppendingString:@".php"];
     NSMutableURLRequest *request = [self.sessionManager.requestSerializer requestWithMethod:method URLString:fullUrl parameters:parameters error:&error];
+    
+    NSLog(@"%@", [request cURLString]);
 
     NSURLSessionDataTask *dataTask = [self.sessionManager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         

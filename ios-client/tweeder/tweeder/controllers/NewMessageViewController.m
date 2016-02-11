@@ -74,7 +74,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView {
     
-    self.characterCountLabel.text = [NSString stringWithFormat:@"%d %@", textView.text.length, (textView.text.length == 1 ? @"character" : @"characters")];
+    self.characterCountLabel.text = [NSString stringWithFormat:@"%lu %@", (unsigned long)textView.text.length, (textView.text.length == 1 ? @"character" : @"characters")];
     [self enableControls];
 }
 

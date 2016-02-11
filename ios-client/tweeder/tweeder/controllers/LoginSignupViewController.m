@@ -18,6 +18,9 @@
 #define kLoginSecondaryActionText   NSLocalizedString(@"I need to Sign Up", @"")
 #define kSignupSecondaryActionText  NSLocalizedString(@"Oops, I really just want to login", @"")
 
+#define kSignupFailure              NSLocalizedString(@"There was an error signing you up. Try using a different username.", @"")
+#define kLoginFailure               NSLocalizedString(@"There was an error logging you in. Double check your username and password and try again.", @"")
+
 
 @interface LoginSignupViewController ()
 @property (atomic)            BOOL         showingLoginView;
@@ -89,9 +92,9 @@
     }
 }
 
-- (void)displayError:(NSError *)error {
+- (void)displayError:(NSString *)message {
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:okButton];
     [self presentViewController:alert animated:YES completion:nil];
@@ -110,7 +113,7 @@
             if (success) {
                 [weakSelf close];
             } else {
-                [weakSelf displayError:error];
+                [weakSelf displayError:kLoginFailure];
             }
         }];
     } else {
@@ -119,7 +122,7 @@
             if (success) {
                 [weakSelf close];
             } else {
-                [weakSelf displayError:error];
+                [weakSelf displayError:kSignupFailure];
             }
         }];
     }

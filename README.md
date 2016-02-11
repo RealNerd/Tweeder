@@ -19,6 +19,8 @@ I made some very simplified technical design decisions while building this sampl
 
 The majority of my work is focused on the functional aspects of the app. I didn't spend a lot of time thinking about the cell layout in the main tableview, nor did I try to develop an overal layout theme. I did try to make it look at least presentable, though, while focusing primarily on the core functionality.
 
+I did *not* provide nice messages for all API failures. Some API failures report nothing more than an error code to the user. 
+
 After successful login, the username is passed back to the server on most requests (instead of using some sort of session token) for simplicity. In a real app, I would expect the login service to return a token to be used in the headers (or bodies) of the subsequent API requests. The server would then be able to expire the session token for security.
 
 Local data is stored in NSUserDefaults or flat files (JSON). 
